@@ -34,8 +34,9 @@ var platforms;
         
 	ground = platforms.create(0, game.world.height - 345, '');
 	ground.enableBody = true;
-        game.physics.enable(platforms, Phaser.Physics.ARCADE);
+    game.physics.enable(platforms, Phaser.Physics.ARCADE);
     game.physics.arcade.gravity.y = 500;
+    
     game.physics.enable(player, Phaser.Physics.ARCADE);
     player.body.bounce.y = 0.2;
     player.body.collideWorldBounds = true;
