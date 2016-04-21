@@ -3,7 +3,7 @@ window.onload = function() {
 	var platforms;
 	function preload() {
 		game.load.image('thehobbit', 'assets/View_from_connors_hill_panorama_01.jpg');
-		game.load.spritesheet('bilbobolson', 'assets/bilbo.png', 385, 412);
+		game.load.spritesheet('bilbobolson', 'assets/test.png', 32, 42);
 		game.load.image('plataforma','assets/The-Hobbit-An-Unexpected-Journey-Wallpapers-1920x1080-17.png')
         console.log('preload');
         
@@ -20,10 +20,10 @@ var jumpButton;
 var bg;
 var platforms;
 	function create() {
-		game.world.setBounds(0, 0, 4289, 800);
+		game.world.setBounds(0, 0, 4289, game.height+100);
 		thehobbit=game.add.sprite(0, 0, 'thehobbit');
-		thehobbit.height = game.height;
-    	thehobbit.width = game.width;
+		thehobbit.height = game.height+100;
+    	//thehobbit.width = game.width;
     	thehobbit.smoothed = true;
     	player=game.add.sprite(50,50,'bilbobolson');
     	game.physics.enable(player, Phaser.Physics.ARCADE);
@@ -93,14 +93,14 @@ var platforms;
     
     if (jumpButton.isDown && player.body.onFloor() && game.time.now > jumpTimer)
     {
-        player.body.velocity.y = -250;
+        player.body.velocity.y = -465;
         jumpTimer = game.time.now + 750;
     }
 	}
 	function render() {
 
-    //game.debug.cameraInfo(game.camera, 500, 32);
-    //game.debug.spriteCoords(player, 32, 32);
+    game.debug.cameraInfo(game.camera, 500, 32);
+    game.debug.spriteCoords(player, 32, 32);
 
 }
 
